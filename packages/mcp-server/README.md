@@ -4,7 +4,11 @@ An MCP server for **Thymewick**, a fictional demo restaurant. It gives any MCP c
 
 > **All data is fictional.** Thymewick is not a real restaurant. Every tool result says so.
 >
-> **Status:** Phase 0: all 5 tools built and tested. Next: client configs, screenshots and the npm package.
+> **Status:** Phase 0. All 5 tools built and tested; published on npm as [`passline-mcp`](https://www.npmjs.com/package/passline-mcp). Verified with MCP Inspector and Claude Code.
+>
+> ```bash
+> npx -y passline-mcp
+> ```
 
 ## Flow
 
@@ -108,6 +112,14 @@ npx @modelcontextprotocol/inspector npx -y passline-mcp
 
 Then ask: *"Are you open Friday, and is the risotto nut-free?"* or *"Show me the floor plan."*
 
+**Windows:** `npx` is a `.cmd` script, and some clients can't start it directly ("Failed to connect"). Run it through `cmd /c` instead:
+```json
+{ "mcpServers": { "passline": { "command": "cmd", "args": ["/c", "npx", "-y", "passline-mcp"] } } }
+```
+For Claude Code on Windows: `claude mcp add-json passline '{"command":"cmd","args":["/c","npx","-y","passline-mcp"]}'`. In Git Bash, set `MSYS_NO_PATHCONV=1` first, or Git Bash rewrites `/c` into `C:/`.
+
+**Inside this repository**, `npx passline-mcp` resolves to the local workspace package, not the published one. Use the local build path shown below.
+
 ### From this repository
 
 ```bash
@@ -173,7 +185,19 @@ $0. No AI model, network call or database.
 - `test/stdio.test.ts`: spawns the built CLI over **real stdio** with the modern client **and** a 2025-era raw handshake, and checks every stdout line is JSON-RPC
 - `test/domain/`, `test/data/`, `test/results.test.ts`: pure logic, data validation, error shape and timeouts
 
-Verified with MCP Inspector 2.14.0 (CLI mode): `tools/list` and `tools/call`.
+Verified by hand:
+- **MCP Inspector 2.14.0** (CLI): `tools/list` and `tools/call` for all 5 tools, against the local build **and** against `npx -y passline-mcp` installed from npm into an empty folder
+- **Claude Code**: `claude mcp list` → ✔ Connected
+
+## Releasing
+
+Releases publish from GitHub Actions with npm **trusted publishing** (no npm token stored; each version gets a provenance attestation):
+
+1. Bump `version` in `packages/mcp-server/package.json` in a PR, and merge it.
+2. Tag the merge commit: `git tag mcp-v0.2.0 && git push origin mcp-v0.2.0`
+3. `.github/workflows/release-mcp.yml` runs typecheck and tests, checks that the tag matches the version, then publishes.
+
+Version 0.1.0 was published by hand with 2FA, to create the package on npm.
 
 ## Decisions
 

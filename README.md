@@ -4,8 +4,18 @@
 
 Passline answers guest questions from a restaurant's own documents, shows the exact passage it used, refuses to guess, and hands allergy questions to staff. Each release adds one more working piece of the front desk, all of it real and testable.
 
-> **Status:** planning Phase 0 (MCP server).
+> **Status:** Phase 0 (MCP server) is out: [`passline-mcp` on npm](https://www.npmjs.com/package/passline-mcp). Phase 1 (knowledge desk) is next.
 > **All data is fictional.** The demo restaurant, Thymewick, does not exist.
+
+## Try the MCP server
+
+Five read-only tools for the fictional restaurant Thymewick: opening hours, table availability, menu search, allergen checks and a floor-plan image.
+
+```bash
+claude mcp add passline -- npx -y passline-mcp
+```
+
+Setup for Claude Desktop, Cursor and MCP Inspector, how the tool descriptions are written, and how the image is returned: [packages/mcp-server/README.md](packages/mcp-server/README.md).
 
 ## What it proves
 
