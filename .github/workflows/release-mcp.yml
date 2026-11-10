@@ -1,0 +1,34 @@
+name: Release passline-mcp
+
+# Publishes packages/mcp-server to npm when a tag like `mcp-v0.2.0` is pushed.
+# Uses npm trusted publishing (OIDC): no npm token is stored anywhere, and each
+# release gets a provenance attestation linking it to this repo and commit.
+# One-time setup on npmjs.com: passline-mcp → Settings → Trusted publishing →
+# GitHub Actions, repository Amir1887/passline, workflow release-mcp.yml.
+
+on:
+  push:
+    tags: ["mcp-v*"]
+
+permissions:
+  contents: read
+  id-token: write # required for trusted publishing + provenance
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      - name: Check the tag matches the package version
+        run: |
+          VERSION=$(node -p "require('./packages/mcp-server/package.json').version")
+          test "mcp-v$VERSION" = "$GITHUB_REF_NAME" || { echo "Tag $GITHUB_REF_NAME does not match version $VERSION"; exit 1; }
+      - run: npm publish --workspace passline-mcp --provenance --access public
