@@ -1,0 +1,98 @@
+{
+  "allergens": ["gluten", "dairy", "eggs", "tree_nuts", "peanuts", "sesame", "fish", "shellfish", "soy"],
+  "dishes": [
+    {
+      "id": "charred-flatbread",
+      "name": "Charred flatbread, whipped feta, za'atar",
+      "course": "starter",
+      "price_usd": 9,
+      "vegetarian": true,
+      "vegan": false,
+      "contains": ["gluten", "dairy"],
+      "may_contain": ["sesame"],
+      "may_contain_reason": "Za'atar is blended in a kitchen that also grinds sesame."
+    },
+    {
+      "id": "smoked-aubergine-dip",
+      "name": "Smoked aubergine dip, pomegranate",
+      "course": "starter",
+      "price_usd": 8,
+      "vegetarian": true,
+      "vegan": true,
+      "contains": ["sesame"],
+      "may_contain": []
+    },
+    {
+      "id": "grilled-halloumi",
+      "name": "Grilled halloumi, honey, pistachio",
+      "course": "starter",
+      "price_usd": 13,
+      "vegetarian": true,
+      "vegan": false,
+      "contains": ["dairy", "tree_nuts"],
+      "may_contain": []
+    },
+    {
+      "id": "wild-mushroom-risotto",
+      "name": "Wild mushroom risotto",
+      "course": "main",
+      "price_usd": 22,
+      "vegetarian": true,
+      "vegan": false,
+      "contains": ["dairy"],
+      "may_contain": ["tree_nuts"],
+      "may_contain_reason": "Cooked in pans shared with the pistachio gremolata."
+    },
+    {
+      "id": "chickpea-spinach-stew",
+      "name": "Chickpea and spinach stew, flatbread",
+      "course": "main",
+      "price_usd": 19,
+      "vegetarian": true,
+      "vegan": true,
+      "contains": ["gluten"],
+      "may_contain": ["sesame"],
+      "may_contain_reason": "The flatbread is baked alongside sesame-topped bread."
+    },
+    {
+      "id": "ember-roasted-sea-bream",
+      "name": "Ember-roasted sea bream, lemon, capers",
+      "course": "main",
+      "price_usd": 28,
+      "vegetarian": false,
+      "vegan": false,
+      "contains": ["fish"],
+      "may_contain": []
+    },
+    {
+      "id": "wood-fired-lamb-shoulder",
+      "name": "Wood-fired lamb shoulder, freekeh",
+      "course": "main",
+      "price_usd": 32,
+      "vegetarian": false,
+      "vegan": false,
+      "contains": ["gluten"],
+      "may_contain": []
+    },
+    {
+      "id": "dark-chocolate-tart",
+      "name": "Dark chocolate tart, hazelnut crumb",
+      "course": "dessert",
+      "price_usd": 11,
+      "vegetarian": true,
+      "vegan": false,
+      "contains": ["gluten", "dairy", "eggs", "tree_nuts"],
+      "may_contain": []
+    },
+    {
+      "id": "orange-blossom-panna-cotta",
+      "name": "Orange blossom panna cotta",
+      "course": "dessert",
+      "price_usd": 9,
+      "vegetarian": true,
+      "vegan": false,
+      "contains": ["dairy"],
+      "may_contain": []
+    }
+  ]
+}

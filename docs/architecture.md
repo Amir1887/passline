@@ -40,8 +40,10 @@ Dashed lines are planned and not built yet.
 
 | Module | Status | README |
 |---|---|---|
+| `data/` (tenant data + loader) | Phase 0, done | [`data/README.md`](../data/README.md) |
 | `packages/mcp-server` | Phase 0, in progress | `packages/mcp-server/README.md` (added with the first tool) |
 
 ## Decisions
 
 - [ADR 0001: Monorepo layout with npm workspaces](adr/0001-monorepo-layout.md)
+- [ADR 0002: Structured tenant data files as the single source of truth](adr/0002-tenant-data-single-source.md)

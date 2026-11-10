@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="1280" height="800" role="img" aria-label="Thymewick dining room floor plan (fictional)">
+  <style>
+    .tl { font: 600 11px Arial, Helvetica, sans-serif; fill: #16191D; text-anchor: middle; }
+    .ts { font: 9px Arial, Helvetica, sans-serif; fill: #5A626B; text-anchor: middle; }
+    .rl { font: 600 12px Arial, Helvetica, sans-serif; fill: #5A626B; }
+    .tt { font: 700 15px Arial, Helvetica, sans-serif; fill: #16191D; }
+    .table { fill: #E2F0EE; stroke: #0F6E66; stroke-width: 1; }
+  </style>
+  <rect width="640" height="400" fill="#FFFFFF"/>
+  <text x="20" y="28" class="tt">Thymewick · dining room</text>
+  <text x="20" y="44" class="ts" style="text-anchor:start">Fictional demo restaurant · not to scale</text>
+
+  <!-- dining room -->
+  <rect x="20" y="58" width="420" height="320" rx="8" fill="#F7F8F9" stroke="#C9CED3"/>
+  <rect x="20" y="58" width="96" height="120" fill="#F0F2F4" stroke="#C9CED3"/>
+  <text x="34" y="80" class="rl">Kitchen</text>
+  <rect x="116" y="96" width="10" height="70" fill="#9AA1A9"/>
+  <text x="132" y="132" class="ts" style="text-anchor:start">the pass</text>
+  <rect x="200" y="66" width="200" height="26" rx="5" fill="#F0F2F4" stroke="#C9CED3"/>
+  <text x="300" y="83" class="rl" style="text-anchor:middle">Bar</text>
+
+  <circle cx="220" cy="140" r="20" class="table"/><text x="220" y="139" class="tl">T1</text><text x="220" y="151" class="ts">2</text>
+  <circle cx="290" cy="140" r="20" class="table"/><text x="290" y="139" class="tl">T2</text><text x="290" y="151" class="ts">2</text>
+  <rect x="338" y="124" width="44" height="32" rx="6" class="table"/><text x="360" y="139" class="tl">T3</text><text x="360" y="151" class="ts">4 seats</text>
+  <rect x="48" y="214" width="44" height="32" rx="6" class="table"/><text x="70" y="229" class="tl">T4</text><text x="70" y="241" class="ts">4 seats</text>
+  <rect x="128" y="214" width="44" height="32" rx="6" class="table"/><text x="150" y="229" class="tl">T5</text><text x="150" y="241" class="ts">4 seats</text>
+  <circle cx="230" cy="230" r="20" class="table"/><text x="230" y="229" class="tl">T6</text><text x="230" y="241" class="ts">2</text>
+  <rect x="278" y="214" width="44" height="32" rx="6" class="table"/><text x="300" y="229" class="tl">T7</text><text x="300" y="241" class="ts">6 seats</text>
+  <circle cx="380" cy="230" r="20" class="table"/><text x="380" y="229" class="tl">T8</text><text x="380" y="241" class="ts">2</text>
+  <rect x="58" y="304" width="44" height="32" rx="6" class="table"/><text x="80" y="319" class="tl">T9</text><text x="80" y="331" class="ts">4 seats</text>
+  <rect x="148" y="304" width="44" height="32" rx="6" class="table"/><text x="170" y="319" class="tl">T10</text><text x="170" y="331" class="ts">4 seats</text>
+  <circle cx="260" cy="320" r="20" class="table"/><text x="260" y="319" class="tl">T11</text><text x="260" y="331" class="ts">2</text>
+  <rect x="330" y="290" width="100" height="10" fill="#C9CED3"/>
+  <text x="380" y="318" class="ts">Entrance</text>
+
+  <!-- terrace -->
+  <rect x="456" y="58" width="164" height="170" rx="8" fill="#FFFFFF" stroke="#0F6E66" stroke-dasharray="5 4"/>
+  <text x="470" y="80" class="rl">Terrace · dogs welcome</text>
+  <rect x="478" y="114" width="44" height="32" rx="6" class="table"/><text x="500" y="129" class="tl">T12</text><text x="500" y="141" class="ts">4 seats</text>
+  <circle cx="575" cy="130" r="20" class="table"/><text x="575" y="129" class="tl">T13</text><text x="575" y="141" class="ts">2</text>
+
+  <!-- private room -->
+  <rect x="456" y="244" width="164" height="134" rx="8" fill="#FBF0E0" stroke="#D48A22"/>
+  <text x="470" y="266" class="rl" style="fill:#8F5208">Private room · ask staff</text>
+  <rect x="488" y="290" width="100" height="44" rx="8" fill="#FFFFFF" stroke="#D48A22"/>
+  <text x="538" y="312" class="tl">PR</text><text x="538" y="325" class="ts">up to 12</text>
+</svg>
