@@ -1,10 +1,10 @@
 # passline-mcp
 
-An MCP server for **Thymewick**, a fictional demo restaurant. It gives any MCP client (Claude Desktop, Claude Code, Cursor, MCP Inspector) read-only tools for opening hours, table availability, menu search and allergen checks, plus a floor-plan image in the next release.
+An MCP server for **Thymewick**, a fictional demo restaurant. It gives any MCP client (Claude Desktop, Claude Code, Cursor, MCP Inspector) five read-only tools: opening hours, table availability, menu search, allergen checks, and a floor-plan image.
 
 > **All data is fictional.** Thymewick is not a real restaurant. Every tool result says so.
 >
-> **Status:** Phase 0 in progress. Available now: `get_opening_hours`, `check_availability`, `search_menu`, `check_allergens`. Coming next: `get_floor_plan` (image).
+> **Status:** Phase 0: all 5 tools built and tested. Next: client configs, screenshots and the npm package.
 
 ## Flow
 
@@ -36,6 +36,7 @@ The server is a factory, `createServer({ data, clock, logger })`. stdio uses it 
 | `check_availability` | core | `date`, `time` (HH:MM on a 30-min slot), `party_size` (1–12) | `available`, `area` or `reason`, up to 4 nearest free `alternatives`. Checks only; never books |
 | `search_menu` | restaurant | optional `query`, `course`, `vegetarian`, `vegan`, `max_price` (USD) | `count`, `dishes` (name, course, price, veg flags). **No allergen data**, on purpose |
 | `check_allergens` | restaurant | `dish` (name or unique part), `allergen` (one of 14 codes) | `status`: `contains` \| `may_contain` (+ reason) \| `not_listed` \| `not_tracked`, `meaning`, **`staff_note` always** |
+| `get_floor_plan` | core | none (`{}`) | A **PNG image** block (1280×800) + a text block with every table, its seats and its area |
 
 Every result also carries `sandbox` (the fictional-data notice). All tools are annotated `readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false`.
 
@@ -44,6 +45,25 @@ Every result also carries `sandbox` (the fictional-data notice). All tools are a
 ### Allergen safety
 
 `check_allergens` never says a dish is safe. There is no `free_of` status: `not_listed` means "not in the recipe", and its `meaning` says that is not a guarantee. Every answer includes the staff note. `search_menu` returns no allergen data, so the model has to use `check_allergens` for allergy questions. See [ADR 0004](../../docs/adr/0004-allergen-answers-never-claim-safety.md).
+
+### How images are returned
+
+`get_floor_plan` returns two content blocks:
+
+```json
+{
+  "content": [
+    { "type": "image", "mimeType": "image/png", "data": "iVBORw0KGgo…(base64, ~68 KB PNG)" },
+    { "type": "text", "text": "Thymewick floor plan. Dining room: T1 (2 seats), … Private room (staff arrange it): PR (12 seats). Fictional demo data…" }
+  ]
+}
+```
+
+- **The image goes first and is base64 PNG with an explicit `mimeType`**, so clients like Claude Desktop can show it inline.
+- **It's pre-rendered and committed** (`data/thymewick/floor-plan.png`, rendered from the SVG by `npm run render:floor-plan`). Every client gets the same pixels, users need no native renderer, and the response stays small: 1280×800, about 68 KB.
+- **A text block carries the same facts**, built from the same data, for models and clients that can't see images.
+- **There's no `structuredContent` and no output schema on this tool.** Some clients have dropped image blocks when `structuredContent` was also present, and an image tool doesn't need structured data.
+- Tests check the block order and `mimeType`, that the base64 decodes to the exact committed PNG, that every table appears in the text, and that there's no `structuredContent`.
 
 ### Availability rules
 
@@ -119,7 +139,7 @@ $0. No AI model, network call or database.
 | `src/cli.ts` | Entry point: loads data, starts `serveStdio` |
 | `src/server.ts` | `createServer()`: registers the tools for the tenant's vertical |
 | `src/tools/` | One file per tool: name, title, description, Zod schemas, annotations, handler. `core/` for any business, `restaurant/` for the restaurant kit |
-| `src/domain/` | Pure logic (dates, opening hours, availability, menu search, allergen status), no MCP SDK imports |
+| `src/domain/` | Pure logic (dates, opening hours, availability, menu search, allergen status, floor-plan text), no MCP SDK imports |
 | `src/data/` | Zod schemas + loader for `data/<tenant>/` (see [data/README.md](../../data/README.md)) |
 | `src/results.ts` | One result/error shape, 2 s timeout, one log line per call |
 | `src/log.ts`, `src/clock.ts`, `src/paths.ts` | stderr logger, injectable clock, data-folder lookup |
