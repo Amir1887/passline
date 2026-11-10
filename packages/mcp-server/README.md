@@ -1,10 +1,10 @@
 # passline-mcp
 
-An MCP server for **Thymewick**, a fictional demo restaurant. It gives any MCP client (Claude Desktop, Claude Code, Cursor, MCP Inspector) read-only tools for opening hours, and — in the next releases — menu search, allergens, table availability and a floor-plan image.
+An MCP server for **Thymewick**, a fictional demo restaurant. It gives any MCP client (Claude Desktop, Claude Code, Cursor, MCP Inspector) read-only tools for opening hours, table availability, menu search and allergen checks, plus a floor-plan image in the next release.
 
 > **All data is fictional.** Thymewick is not a real restaurant. Every tool result says so.
 >
-> **Status:** Phase 0 in progress. Available now: `get_opening_hours`. Coming next: `search_menu`, `check_allergens`, `check_availability`, `get_floor_plan`.
+> **Status:** Phase 0 in progress. Available now: `get_opening_hours`, `check_availability`, `search_menu`, `check_allergens`. Coming next: `get_floor_plan` (image).
 
 ## Flow
 
@@ -30,11 +30,29 @@ The server is a factory, `createServer({ data, clock, logger })`. stdio uses it 
 
 ## Tools
 
-| Tool | Title | Input | Returns |
+| Tool | Kit | Input | Returns |
 |---|---|---|---|
-| `get_opening_hours` | Opening hours | `day` (lowercase weekday) **or** `date` (YYYY-MM-DD), or neither for today | `open`, `opens`, `closes`, `last_seating`, `note` or `reason`, `today`, `timezone`, `sandbox` |
+| `get_opening_hours` | core | `day` (lowercase weekday) **or** `date` (YYYY-MM-DD), or neither for today | `open`, `opens`, `closes`, `last_seating`, `note` or `reason`, `today`, `timezone` |
+| `check_availability` | core | `date`, `time` (HH:MM on a 30-min slot), `party_size` (1–12) | `available`, `area` or `reason`, up to 4 nearest free `alternatives`. Checks only; never books |
+| `search_menu` | restaurant | optional `query`, `course`, `vegetarian`, `vegan`, `max_price` (USD) | `count`, `dishes` (name, course, price, veg flags). **No allergen data**, on purpose |
+| `check_allergens` | restaurant | `dish` (name or unique part), `allergen` (one of 14 codes) | `status`: `contains` \| `may_contain` (+ reason) \| `not_listed` \| `not_tracked`, `meaning`, **`staff_note` always** |
 
-All tools are annotated `readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false`.
+Every result also carries `sandbox` (the fictional-data notice). All tools are annotated `readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false`.
+
+**Core** tools work for any business; **restaurant** tools come from the restaurant kit, chosen by the tenant's `vertical`.
+
+### Allergen safety
+
+`check_allergens` never says a dish is safe. There is no `free_of` status: `not_listed` means "not in the recipe", and its `meaning` says that is not a guarantee. Every answer includes the staff note. `search_menu` returns no allergen data, so the model has to use `check_allergens` for allergy questions. See [ADR 0004](../../docs/adr/0004-allergen-answers-never-claim-safety.md).
+
+### Availability rules
+
+- Seats the smallest free table that fits, so big tables stay free for big groups.
+- A booking blocks its table for 90 minutes.
+- The private room is staff-only.
+- No past dates, and nothing beyond the 60-day booking window.
+- Times must fall on 30-minute slots.
+- Groups over 12 get a fixable error pointing them to staff.
 
 ## Run it locally
 
@@ -83,7 +101,7 @@ The model only sees the name, title, description and schemas, so the description
 | Case | Behaviour | Logged as |
 |---|---|---|
 | Wrong type or format (e.g. `day: "Friday"`) | The SDK rejects it before the handler: `isError: true` naming the field | — |
-| Valid types, impossible request (e.g. both `day` and `date`) | `isError: true`, `Invalid input: … Fix: …` | `info` "tool call rejected input" |
+| Valid types, impossible request (both `day` and `date`; a past date; party of 40; an ambiguous dish like "flatbread"; an unknown dish) | `isError: true`, `Invalid input: … Fix: …`. Ambiguous dishes list the matches; unknown dishes point to `search_menu` | `info` "tool call rejected input" |
 | Handler takes longer than 2 s | `isError: true`, generic message with a request id | `error` "timed out after 2000 ms" |
 | Unexpected bug | `isError: true`, generic message with a request id; no internals leak | `error` with the real message |
 | Data folder invalid or missing | The process exits with code 1; the reason goes to stderr | `error` "failed to start" |
@@ -100,8 +118,8 @@ $0. No AI model, network call or database.
 |---|---|
 | `src/cli.ts` | Entry point: loads data, starts `serveStdio` |
 | `src/server.ts` | `createServer()`: registers the tools for the tenant's vertical |
-| `src/tools/` | One file per tool: name, title, description, Zod schemas, annotations, handler. `core/` for any business, the restaurant kit later |
-| `src/domain/` | Pure logic (dates, opening hours), no MCP SDK imports |
+| `src/tools/` | One file per tool: name, title, description, Zod schemas, annotations, handler. `core/` for any business, `restaurant/` for the restaurant kit |
+| `src/domain/` | Pure logic (dates, opening hours, availability, menu search, allergen status), no MCP SDK imports |
 | `src/data/` | Zod schemas + loader for `data/<tenant>/` (see [data/README.md](../../data/README.md)) |
 | `src/results.ts` | One result/error shape, 2 s timeout, one log line per call |
 | `src/log.ts`, `src/clock.ts`, `src/paths.ts` | stderr logger, injectable clock, data-folder lookup |
@@ -127,3 +145,4 @@ Verified with MCP Inspector 2.14.0 (CLI mode): `tools/list` and `tools/call`.
 
 - [ADR 0002: Tenant data as the single source of truth](../../docs/adr/0002-tenant-data-single-source.md)
 - [ADR 0003: MCP SDK v2, stdio first, one server factory](../../docs/adr/0003-mcp-sdk-v2-stdio-factory.md)
+- [ADR 0004: Allergen answers never claim a dish is safe](../../docs/adr/0004-allergen-answers-never-claim-safety.md)

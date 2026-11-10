@@ -83,6 +83,7 @@ export const Availability = z
   .object({
     slot_minutes: z.int().refine((m) => [15, 30, 60].includes(m), "slot_minutes must be 15, 30 or 60"),
     seating_minutes: z.int().min(30).max(240),
+    booking_window_days: z.int().min(1).max(365),
     tables: z.array(Table).min(1),
     recurring_bookings: z.array(z.object({ weekday: Weekday, time: TimeOfDay, table: z.string() })),
   })
@@ -99,6 +100,30 @@ export const Availability = z
 export type Availability = z.infer<typeof Availability>;
 
 // ---------- restaurant kit ----------
+
+/**
+ * Allergen codes any restaurant tenant may track (the 14 common regulated
+ * allergens). A tenant lists the ones it tracks in menu.json; asking about one
+ * it doesn't track gets an honest "not_tracked" answer, never a guess.
+ */
+export const ALLERGEN_CODES = [
+  "gluten",
+  "dairy",
+  "eggs",
+  "tree_nuts",
+  "peanuts",
+  "sesame",
+  "fish",
+  "shellfish",
+  "molluscs",
+  "soy",
+  "mustard",
+  "celery",
+  "sulphites",
+  "lupin",
+] as const;
+export const AllergenCode = z.enum(ALLERGEN_CODES);
+export type AllergenCode = z.infer<typeof AllergenCode>;
 
 export const Dish = z
   .object({
@@ -120,9 +145,9 @@ export const Dish = z
 export type Dish = z.infer<typeof Dish>;
 
 export const Menu = z
-  .object({ allergens: z.array(z.string().regex(/^[a-z_]+$/)).min(1), dishes: z.array(Dish).min(1) })
+  .object({ allergens: z.array(AllergenCode).min(1), dishes: z.array(Dish).min(1) })
   .superRefine((m, ctx) => {
-    const known = new Set(m.allergens);
+    const known = new Set<string>(m.allergens);
     const ids = m.dishes.map((d) => d.id);
     if (new Set(ids).size !== ids.length) ctx.addIssue({ code: "custom", message: "Dish ids must be unique", path: ["dishes"] });
     m.dishes.forEach((d, i) => {

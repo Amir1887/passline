@@ -26,8 +26,8 @@ The loader validates everything at startup. A broken file stops the server with 
 |---|---|---|---|
 | `restaurant.json` | core | id, name, `vertical`, IANA time zone, currency, max party size, sandbox notice | `vertical` picks the kit; max party size ≤ largest table |
 | `hours.json` | core | weekly hours (`null` = closed), last seating, notes, dated closures | `HH:MM` 24-hour; open < close; open ≤ last seating ≤ close; one closure per date |
-| `availability.json` | core | slot length, seating length, tables (seats, area, `staff_only`), recurring bookings | unique table ids; bookings point to real tables and fall on a slot |
-| `menu.json` | restaurant kit | allergen list, dishes (course, USD price, vegetarian/vegan, `contains`, `may_contain` + reason) | known allergens only; vegan ⇒ vegetarian; `may_contain` needs a reason; no allergen in both lists |
+| `availability.json` | core | slot length, seating length, booking window (days), tables (seats, area, `staff_only`), recurring bookings | unique table ids; bookings point to real tables and fall on a slot |
+| `menu.json` | restaurant kit | tracked allergens (subset of 14 standard codes), dishes (course, USD price, vegetarian/vegan, `contains`, `may_contain` + reason) | dish allergens must be tracked; vegan ⇒ vegetarian; `may_contain` needs a reason; no allergen in both lists |
 | `floor-plan.svg` | core | the dining-room layout | every table id from `availability.json` is drawn once |
 | `floor-plan.png` | core (generated) | 1280×800 PNG returned by the MCP image tool | rendered from the SVG; committed so users need no native renderer |
 
