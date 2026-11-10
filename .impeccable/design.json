@@ -1,0 +1,806 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-10T18:52:26.478Z",
+  "title": "Design System: Passline",
+  "extensions": {
+    "colorMeta": {
+      "background": {
+        "role": "neutral",
+        "displayName": "Desk Ground",
+        "canonical": "oklch(97.9% 0.002 248)",
+        "tonalRamp": [
+          "oklch(15% 0.002 248)",
+          "oklch(26% 0.002 248)",
+          "oklch(37% 0.002 248)",
+          "oklch(48% 0.002 248)",
+          "oklch(59% 0.002 248)",
+          "oklch(70% 0.002 248)",
+          "oklch(82% 0.002 248)",
+          "oklch(95% 0.002 248)"
+        ],
+        "theme": "light",
+        "cssVar": "--background"
+      },
+      "card": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "oklch(100.0% 0.000 90)",
+        "tonalRamp": [
+          "oklch(15% 0.000 90)",
+          "oklch(26% 0.000 90)",
+          "oklch(37% 0.000 90)",
+          "oklch(48% 0.000 90)",
+          "oklch(59% 0.000 90)",
+          "oklch(70% 0.000 90)",
+          "oklch(82% 0.000 90)",
+          "oklch(95% 0.000 90)"
+        ],
+        "theme": "light",
+        "cssVar": "--card"
+      },
+      "sidebar": {
+        "role": "neutral",
+        "displayName": "Rail Grey",
+        "canonical": "oklch(96.0% 0.003 248)",
+        "tonalRamp": [
+          "oklch(15% 0.003 248)",
+          "oklch(26% 0.003 248)",
+          "oklch(37% 0.003 248)",
+          "oklch(48% 0.003 248)",
+          "oklch(59% 0.003 248)",
+          "oklch(70% 0.003 248)",
+          "oklch(82% 0.003 248)",
+          "oklch(95% 0.003 248)"
+        ],
+        "theme": "light",
+        "cssVar": "--sidebar"
+      },
+      "foreground": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "oklch(21.2% 0.009 256)",
+        "tonalRamp": [
+          "oklch(15% 0.009 256)",
+          "oklch(26% 0.009 256)",
+          "oklch(37% 0.009 256)",
+          "oklch(48% 0.009 256)",
+          "oklch(59% 0.009 256)",
+          "oklch(70% 0.009 256)",
+          "oklch(82% 0.009 256)",
+          "oklch(95% 0.009 256)"
+        ],
+        "theme": "light",
+        "cssVar": "--foreground"
+      },
+      "muted-foreground": {
+        "role": "neutral",
+        "displayName": "Slate",
+        "canonical": "oklch(49.2% 0.018 251)",
+        "tonalRamp": [
+          "oklch(15% 0.018 251)",
+          "oklch(26% 0.018 251)",
+          "oklch(37% 0.018 251)",
+          "oklch(48% 0.018 251)",
+          "oklch(59% 0.018 251)",
+          "oklch(70% 0.018 251)",
+          "oklch(82% 0.018 251)",
+          "oklch(95% 0.018 251)"
+        ],
+        "theme": "light",
+        "cssVar": "--muted-foreground"
+      },
+      "faint": {
+        "role": "status",
+        "displayName": "Stopped Grey",
+        "canonical": "oklch(70.6% 0.014 252)",
+        "tonalRamp": [
+          "oklch(15% 0.014 252)",
+          "oklch(26% 0.014 252)",
+          "oklch(37% 0.014 252)",
+          "oklch(48% 0.014 252)",
+          "oklch(59% 0.014 252)",
+          "oklch(70% 0.014 252)",
+          "oklch(82% 0.014 252)",
+          "oklch(95% 0.014 252)"
+        ],
+        "theme": "light",
+        "cssVar": "--faint"
+      },
+      "border": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "oklch(92.0% 0.005 248)",
+        "tonalRamp": [
+          "oklch(15% 0.005 248)",
+          "oklch(26% 0.005 248)",
+          "oklch(37% 0.005 248)",
+          "oklch(48% 0.005 248)",
+          "oklch(59% 0.005 248)",
+          "oklch(70% 0.005 248)",
+          "oklch(82% 0.005 248)",
+          "oklch(95% 0.005 248)"
+        ],
+        "theme": "light",
+        "cssVar": "--border"
+      },
+      "primary": {
+        "role": "primary",
+        "displayName": "Pass Teal",
+        "canonical": "oklch(48.6% 0.082 186)",
+        "tonalRamp": [
+          "oklch(15% 0.082 186)",
+          "oklch(26% 0.082 186)",
+          "oklch(37% 0.082 186)",
+          "oklch(48% 0.082 186)",
+          "oklch(59% 0.082 186)",
+          "oklch(70% 0.082 186)",
+          "oklch(82% 0.082 186)",
+          "oklch(95% 0.082 186)"
+        ],
+        "theme": "light",
+        "cssVar": "--primary"
+      },
+      "primary-foreground": {
+        "role": "primary",
+        "displayName": "Pass Teal Foreground",
+        "canonical": "oklch(100.0% 0.000 90)",
+        "tonalRamp": [
+          "oklch(15% 0.000 90)",
+          "oklch(26% 0.000 90)",
+          "oklch(37% 0.000 90)",
+          "oklch(48% 0.000 90)",
+          "oklch(59% 0.000 90)",
+          "oklch(70% 0.000 90)",
+          "oklch(82% 0.000 90)",
+          "oklch(95% 0.000 90)"
+        ],
+        "theme": "light",
+        "cssVar": "--primary-foreground"
+      },
+      "primary-soft": {
+        "role": "primary",
+        "displayName": "Teal Wash",
+        "canonical": "oklch(94.4% 0.015 187)",
+        "tonalRamp": [
+          "oklch(15% 0.015 187)",
+          "oklch(26% 0.015 187)",
+          "oklch(37% 0.015 187)",
+          "oklch(48% 0.015 187)",
+          "oklch(59% 0.015 187)",
+          "oklch(70% 0.015 187)",
+          "oklch(82% 0.015 187)",
+          "oklch(95% 0.015 187)"
+        ],
+        "theme": "light",
+        "cssVar": "--primary-soft"
+      },
+      "success": {
+        "role": "status",
+        "displayName": "Passed Green",
+        "canonical": "oklch(60.7% 0.137 157)",
+        "tonalRamp": [
+          "oklch(15% 0.137 157)",
+          "oklch(26% 0.137 157)",
+          "oklch(37% 0.137 157)",
+          "oklch(48% 0.137 157)",
+          "oklch(59% 0.137 157)",
+          "oklch(70% 0.137 157)",
+          "oklch(82% 0.137 157)",
+          "oklch(95% 0.137 157)"
+        ],
+        "theme": "light",
+        "cssVar": "--success"
+      },
+      "warning": {
+        "role": "status",
+        "displayName": "Staff Amber",
+        "canonical": "oklch(60.1% 0.129 64)",
+        "tonalRamp": [
+          "oklch(15% 0.129 64)",
+          "oklch(26% 0.129 64)",
+          "oklch(37% 0.129 64)",
+          "oklch(48% 0.129 64)",
+          "oklch(59% 0.129 64)",
+          "oklch(70% 0.129 64)",
+          "oklch(82% 0.129 64)",
+          "oklch(95% 0.129 64)"
+        ],
+        "theme": "light",
+        "cssVar": "--warning"
+      },
+      "warning-soft": {
+        "role": "status",
+        "displayName": "Amber Wash",
+        "canonical": "oklch(95.9% 0.024 77)",
+        "tonalRamp": [
+          "oklch(15% 0.024 77)",
+          "oklch(26% 0.024 77)",
+          "oklch(37% 0.024 77)",
+          "oklch(48% 0.024 77)",
+          "oklch(59% 0.024 77)",
+          "oklch(70% 0.024 77)",
+          "oklch(82% 0.024 77)",
+          "oklch(95% 0.024 77)"
+        ],
+        "theme": "light",
+        "cssVar": "--warning-soft"
+      },
+      "highlight": {
+        "role": "highlight",
+        "displayName": "Marker Yellow",
+        "canonical": "oklch(93.4% 0.090 92)",
+        "tonalRamp": [
+          "oklch(15% 0.090 92)",
+          "oklch(26% 0.090 92)",
+          "oklch(37% 0.090 92)",
+          "oklch(48% 0.090 92)",
+          "oklch(59% 0.090 92)",
+          "oklch(70% 0.090 92)",
+          "oklch(82% 0.090 92)",
+          "oklch(95% 0.090 92)"
+        ],
+        "theme": "light",
+        "cssVar": "--highlight"
+      },
+      "highlight-foreground": {
+        "role": "highlight",
+        "displayName": "Marker Ink",
+        "canonical": "oklch(24.8% 0.051 92)",
+        "tonalRamp": [
+          "oklch(15% 0.051 92)",
+          "oklch(26% 0.051 92)",
+          "oklch(37% 0.051 92)",
+          "oklch(48% 0.051 92)",
+          "oklch(59% 0.051 92)",
+          "oklch(70% 0.051 92)",
+          "oklch(82% 0.051 92)",
+          "oklch(95% 0.051 92)"
+        ],
+        "theme": "light",
+        "cssVar": "--highlight-foreground"
+      },
+      "background-dark": {
+        "role": "neutral",
+        "displayName": "Desk Ground (dark)",
+        "canonical": "oklch(18.5% 0.005 248)",
+        "tonalRamp": [
+          "oklch(15% 0.005 248)",
+          "oklch(26% 0.005 248)",
+          "oklch(37% 0.005 248)",
+          "oklch(48% 0.005 248)",
+          "oklch(59% 0.005 248)",
+          "oklch(70% 0.005 248)",
+          "oklch(82% 0.005 248)",
+          "oklch(95% 0.005 248)"
+        ],
+        "theme": "dark",
+        "cssVar": "--background"
+      },
+      "card-dark": {
+        "role": "neutral",
+        "displayName": "Paper (dark)",
+        "canonical": "oklch(22.0% 0.007 248)",
+        "tonalRamp": [
+          "oklch(15% 0.007 248)",
+          "oklch(26% 0.007 248)",
+          "oklch(37% 0.007 248)",
+          "oklch(48% 0.007 248)",
+          "oklch(59% 0.007 248)",
+          "oklch(70% 0.007 248)",
+          "oklch(82% 0.007 248)",
+          "oklch(95% 0.007 248)"
+        ],
+        "theme": "dark",
+        "cssVar": "--card"
+      },
+      "sidebar-dark": {
+        "role": "neutral",
+        "displayName": "Rail Grey (dark)",
+        "canonical": "oklch(20.7% 0.008 248)",
+        "tonalRamp": [
+          "oklch(15% 0.008 248)",
+          "oklch(26% 0.008 248)",
+          "oklch(37% 0.008 248)",
+          "oklch(48% 0.008 248)",
+          "oklch(59% 0.008 248)",
+          "oklch(70% 0.008 248)",
+          "oklch(82% 0.008 248)",
+          "oklch(95% 0.008 248)"
+        ],
+        "theme": "dark",
+        "cssVar": "--sidebar"
+      },
+      "foreground-dark": {
+        "role": "neutral",
+        "displayName": "Ink (dark)",
+        "canonical": "oklch(93.6% 0.005 248)",
+        "tonalRamp": [
+          "oklch(15% 0.005 248)",
+          "oklch(26% 0.005 248)",
+          "oklch(37% 0.005 248)",
+          "oklch(48% 0.005 248)",
+          "oklch(59% 0.005 248)",
+          "oklch(70% 0.005 248)",
+          "oklch(82% 0.005 248)",
+          "oklch(95% 0.005 248)"
+        ],
+        "theme": "dark",
+        "cssVar": "--foreground"
+      },
+      "muted-foreground-dark": {
+        "role": "neutral",
+        "displayName": "Slate (dark)",
+        "canonical": "oklch(73.4% 0.015 248)",
+        "tonalRamp": [
+          "oklch(15% 0.015 248)",
+          "oklch(26% 0.015 248)",
+          "oklch(37% 0.015 248)",
+          "oklch(48% 0.015 248)",
+          "oklch(59% 0.015 248)",
+          "oklch(70% 0.015 248)",
+          "oklch(82% 0.015 248)",
+          "oklch(95% 0.015 248)"
+        ],
+        "theme": "dark",
+        "cssVar": "--muted-foreground"
+      },
+      "faint-dark": {
+        "role": "status",
+        "displayName": "Stopped Grey (dark)",
+        "canonical": "oklch(56.6% 0.017 251)",
+        "tonalRamp": [
+          "oklch(15% 0.017 251)",
+          "oklch(26% 0.017 251)",
+          "oklch(37% 0.017 251)",
+          "oklch(48% 0.017 251)",
+          "oklch(59% 0.017 251)",
+          "oklch(70% 0.017 251)",
+          "oklch(82% 0.017 251)",
+          "oklch(95% 0.017 251)"
+        ],
+        "theme": "dark",
+        "cssVar": "--faint"
+      },
+      "border-dark": {
+        "role": "neutral",
+        "displayName": "Hairline (dark)",
+        "canonical": "oklch(30.2% 0.011 248)",
+        "tonalRamp": [
+          "oklch(15% 0.011 248)",
+          "oklch(26% 0.011 248)",
+          "oklch(37% 0.011 248)",
+          "oklch(48% 0.011 248)",
+          "oklch(59% 0.011 248)",
+          "oklch(70% 0.011 248)",
+          "oklch(82% 0.011 248)",
+          "oklch(95% 0.011 248)"
+        ],
+        "theme": "dark",
+        "cssVar": "--border"
+      },
+      "primary-dark": {
+        "role": "primary",
+        "displayName": "Pass Teal (dark)",
+        "canonical": "oklch(74.2% 0.105 185)",
+        "tonalRamp": [
+          "oklch(15% 0.105 185)",
+          "oklch(26% 0.105 185)",
+          "oklch(37% 0.105 185)",
+          "oklch(48% 0.105 185)",
+          "oklch(59% 0.105 185)",
+          "oklch(70% 0.105 185)",
+          "oklch(82% 0.105 185)",
+          "oklch(95% 0.105 185)"
+        ],
+        "theme": "dark",
+        "cssVar": "--primary"
+      },
+      "primary-foreground-dark": {
+        "role": "primary",
+        "displayName": "Pass Teal Foreground (dark)",
+        "canonical": "oklch(22.2% 0.032 185)",
+        "tonalRamp": [
+          "oklch(15% 0.032 185)",
+          "oklch(26% 0.032 185)",
+          "oklch(37% 0.032 185)",
+          "oklch(48% 0.032 185)",
+          "oklch(59% 0.032 185)",
+          "oklch(70% 0.032 185)",
+          "oklch(82% 0.032 185)",
+          "oklch(95% 0.032 185)"
+        ],
+        "theme": "dark",
+        "cssVar": "--primary-foreground"
+      },
+      "primary-soft-dark": {
+        "role": "primary",
+        "displayName": "Teal Wash (dark)",
+        "canonical": "oklch(29.8% 0.035 187)",
+        "tonalRamp": [
+          "oklch(15% 0.035 187)",
+          "oklch(26% 0.035 187)",
+          "oklch(37% 0.035 187)",
+          "oklch(48% 0.035 187)",
+          "oklch(59% 0.035 187)",
+          "oklch(70% 0.035 187)",
+          "oklch(82% 0.035 187)",
+          "oklch(95% 0.035 187)"
+        ],
+        "theme": "dark",
+        "cssVar": "--primary-soft"
+      },
+      "success-dark": {
+        "role": "status",
+        "displayName": "Passed Green (dark)",
+        "canonical": "oklch(72.9% 0.148 159)",
+        "tonalRamp": [
+          "oklch(15% 0.148 159)",
+          "oklch(26% 0.148 159)",
+          "oklch(37% 0.148 159)",
+          "oklch(48% 0.148 159)",
+          "oklch(59% 0.148 159)",
+          "oklch(70% 0.148 159)",
+          "oklch(82% 0.148 159)",
+          "oklch(95% 0.148 159)"
+        ],
+        "theme": "dark",
+        "cssVar": "--success"
+      },
+      "warning-dark": {
+        "role": "status",
+        "displayName": "Staff Amber (dark)",
+        "canonical": "oklch(76.7% 0.130 73)",
+        "tonalRamp": [
+          "oklch(15% 0.130 73)",
+          "oklch(26% 0.130 73)",
+          "oklch(37% 0.130 73)",
+          "oklch(48% 0.130 73)",
+          "oklch(59% 0.130 73)",
+          "oklch(70% 0.130 73)",
+          "oklch(82% 0.130 73)",
+          "oklch(95% 0.130 73)"
+        ],
+        "theme": "dark",
+        "cssVar": "--warning"
+      },
+      "warning-soft-dark": {
+        "role": "status",
+        "displayName": "Amber Wash (dark)",
+        "canonical": "oklch(28.0% 0.029 64)",
+        "tonalRamp": [
+          "oklch(15% 0.029 64)",
+          "oklch(26% 0.029 64)",
+          "oklch(37% 0.029 64)",
+          "oklch(48% 0.029 64)",
+          "oklch(59% 0.029 64)",
+          "oklch(70% 0.029 64)",
+          "oklch(82% 0.029 64)",
+          "oklch(95% 0.029 64)"
+        ],
+        "theme": "dark",
+        "cssVar": "--warning-soft"
+      },
+      "highlight-dark": {
+        "role": "highlight",
+        "displayName": "Marker Yellow (dark)",
+        "canonical": "oklch(41.7% 0.076 90)",
+        "tonalRamp": [
+          "oklch(15% 0.076 90)",
+          "oklch(26% 0.076 90)",
+          "oklch(37% 0.076 90)",
+          "oklch(48% 0.076 90)",
+          "oklch(59% 0.076 90)",
+          "oklch(70% 0.076 90)",
+          "oklch(82% 0.076 90)",
+          "oklch(95% 0.076 90)"
+        ],
+        "theme": "dark",
+        "cssVar": "--highlight"
+      },
+      "highlight-foreground-dark": {
+        "role": "highlight",
+        "displayName": "Marker Ink (dark)",
+        "canonical": "oklch(96.2% 0.051 91)",
+        "tonalRamp": [
+          "oklch(15% 0.051 91)",
+          "oklch(26% 0.051 91)",
+          "oklch(37% 0.051 91)",
+          "oklch(48% 0.051 91)",
+          "oklch(59% 0.051 91)",
+          "oklch(70% 0.051 91)",
+          "oklch(82% 0.051 91)",
+          "oklch(95% 0.051 91)"
+        ],
+        "theme": "dark",
+        "cssVar": "--highlight-foreground"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "About page headline only."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Empty-state heading."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "About section headings; lead paragraph size."
+      },
+      "title-sm": {
+        "displayName": "Title Small",
+        "purpose": "Topbar, source panel and source page titles."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Base text and user messages."
+      },
+      "body-answer": {
+        "displayName": "Body Answer",
+        "purpose": "Assistant answers and the composer input."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Sidebar rows and step titles."
+      },
+      "small": {
+        "displayName": "Small",
+        "purpose": "Step descriptions, chips, pills, buttons."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Subtitles, group labels, fine print, run facts. Sentence case."
+      },
+      "mono": {
+        "displayName": "Mono",
+        "purpose": "Match scores and code paths only."
+      },
+      "citation": {
+        "displayName": "Citation",
+        "purpose": "Numbered ref inside answer text."
+      }
+    },
+    "shadows": [
+      {
+        "name": "composer-lift",
+        "value": "0 1px 2px rgba(22, 25, 29, .06), 0 8px 24px -12px rgba(22, 25, 29, .18)",
+        "purpose": "Composer box at rest; starter cards on hover."
+      },
+      {
+        "name": "composer-lift-dark",
+        "value": "0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.6)",
+        "purpose": "Composer lift in the dark theme."
+      },
+      {
+        "name": "active-row",
+        "value": "0 1px 2px rgba(22,25,29,.06)",
+        "purpose": "Current sidebar nav row."
+      },
+      {
+        "name": "dot-halo",
+        "value": "0 0 0 3px var(--card)",
+        "purpose": "Ring around timeline dots so they cut through the spine."
+      }
+    ],
+    "focus": {
+      "value": "outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 6px",
+      "purpose": "Keyboard focus on every control."
+    },
+    "motion": [
+      {
+        "name": "ease-out-expo",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Shared easing for every transition and the running pulse."
+      },
+      {
+        "name": "chevron",
+        "value": "transform 0.25s",
+        "purpose": "Timeline chevron rotates 90deg when open."
+      },
+      {
+        "name": "drawer",
+        "value": "transform 0.3s",
+        "purpose": "Mobile sidebar slide-in."
+      },
+      {
+        "name": "dot-settle",
+        "value": "background-color 0.3s",
+        "purpose": "Step dot settles into its final state."
+      },
+      {
+        "name": "composer-focus",
+        "value": "border-color 0.2s",
+        "purpose": "Composer border shift on focus-within."
+      },
+      {
+        "name": "run-pulse",
+        "value": "1s infinite",
+        "purpose": "Running step ring thickens from 1.5px to 4px."
+      },
+      {
+        "name": "caret-blink",
+        "value": "1s steps(1) infinite",
+        "purpose": "Streaming answer caret."
+      },
+      {
+        "name": "step-cadence",
+        "value": "520ms per step, 32ms per word",
+        "purpose": "Pacing of steps and streamed words in the prototype."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "prefers-reduced-motion: reduce removes all animation and transition",
+        "purpose": "Accessibility floor."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "narrow",
+        "value": "560px"
+      },
+      {
+        "name": "compact",
+        "value": "980px"
+      },
+      {
+        "name": "panel-narrow",
+        "value": "1180px"
+      }
+    ],
+    "shadcnMap": {
+      "--background": "background",
+      "--card": "card",
+      "--popover": "card",
+      "--sidebar": "sidebar",
+      "--foreground": "foreground",
+      "--card-foreground": "foreground",
+      "--muted-foreground": "muted-foreground",
+      "--border": "border",
+      "--input": "border",
+      "--ring": "primary",
+      "--primary": "primary",
+      "--primary-foreground": "primary-foreground",
+      "--secondary": "sidebar",
+      "--accent": "card",
+      "--accent-foreground": "foreground"
+    }
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one teal action in a block: Open the front desk, Ask staff in a safety notice.",
+      "html": "<button class=\"ds-btn\">Ask staff</button> <button class=\"ds-btn\" disabled>Handoff recorded</button>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--primary,#0F6E66);background:var(--primary,#0F6E66);color:var(--primary-foreground,#FFFFFF);border-radius:9px;padding:7px 13px;font:600 13.5px/1.6 Geist,'Segoe UI',system-ui,sans-serif;cursor:pointer}.ds-btn:hover{filter:brightness(1.08)}.ds-btn:focus-visible{outline:2px solid var(--primary,#0F6E66);outline-offset:2px}.ds-btn:disabled{background:var(--card,#FFFFFF);color:var(--muted-foreground,#5A626B);border-color:var(--border,#E2E5E8);filter:none;cursor:default}"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Secondary actions and Ask staff outside a safety notice.",
+      "html": "<button class=\"ds-btn-outline\">How it works</button>",
+      "css": ".ds-btn-outline{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border,#E2E5E8);background:var(--card,#FFFFFF);color:var(--foreground,#16191D);border-radius:9px;padding:7px 13px;font:600 13.5px/1.6 Geist,'Segoe UI',system-ui,sans-serif;cursor:pointer;transition:border-color .2s}.ds-btn-outline:hover{border-color:var(--faint,#9AA1A9)}.ds-btn-outline:focus-visible{outline:2px solid var(--primary,#0F6E66);outline-offset:2px}"
+    },
+    {
+      "name": "Composer",
+      "kind": "input",
+      "refersTo": "composer",
+      "description": "The bottom composer; its send button becomes Stop while an answer runs.",
+      "html": "<form class=\"ds-box\"><textarea class=\"ds-ta\" rows=\"1\" placeholder=\"Ask about the menu, allergies, bookings or hours\"></textarea><button type=\"button\" class=\"ds-send\" aria-label=\"Send\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M8 13V3M3.5 7.5L8 3l4.5 4.5\"/></svg></button><button type=\"button\" class=\"ds-send ds-stop\" aria-label=\"Stop\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\"><rect x=\"4\" y=\"4\" width=\"8\" height=\"8\" rx=\"1.5\" fill=\"currentColor\"/></svg></button></form>",
+      "css": ".ds-box{display:flex;align-items:flex-end;gap:8px;max-width:560px;background:var(--card,#FFFFFF);border:1px solid var(--border,#E2E5E8);border-radius:16px;padding:8px 8px 8px 14px;box-shadow:0 1px 2px rgba(22,25,29,.06),0 8px 24px -12px rgba(22,25,29,.18);transition:border-color .2s cubic-bezier(0.16,1,0.3,1)}.ds-box:focus-within{border-color:var(--faint,#9AA1A9)}.ds-ta{flex:1;min-width:0;border:0;background:transparent;color:var(--foreground,#16191D);font:400 15.5px/1.5 Geist,'Segoe UI',system-ui,sans-serif;resize:none;padding:7px 0;caret-color:var(--primary,#0F6E66)}.ds-ta:focus{outline:none}.ds-ta::placeholder{color:var(--muted-foreground,#5A626B)}.ds-send{width:36px;height:36px;border-radius:10px;border:0;background:var(--primary,#0F6E66);color:var(--primary-foreground,#FFFFFF);display:grid;place-items:center;flex:none;cursor:pointer}.ds-send:focus-visible{outline:2px solid var(--primary,#0F6E66);outline-offset:2px}.ds-stop{background:var(--foreground,#16191D);color:var(--background,#F7F8F9)}"
+    },
+    {
+      "name": "Sidebar Navigation",
+      "kind": "nav",
+      "refersTo": "sidebar-item-active",
+      "description": "Sidebar rows on Rail Grey; the active row fills with Paper and a hairline shadow; cited documents get a green dot.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\" class=\"ds-nav-a\" aria-current=\"page\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><path d=\"M2.5 3.5h11v7h-6l-3 2.5v-2.5h-2z\" stroke-linejoin=\"round\"/></svg>Front desk</a><a href=\"#\" class=\"ds-nav-a\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><circle cx=\"8\" cy=\"8\" r=\"5.5\"/><path d=\"M8 5.5v3l2 1.5\" stroke-linecap=\"round\"/></svg>About Passline</a><span class=\"ds-side-h\">Documents on file</span><a href=\"#\" class=\"ds-nav-a\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-linejoin=\"round\"><path d=\"M4 1.8h5.3L12.2 4.7V14.2H4z M9.3 1.8v2.9h2.9\"/></svg>Booking policy<span class=\"ds-cited\"></span></a></nav>",
+      "css": ".ds-nav{display:grid;gap:2px;width:224px;padding:14px;background:var(--sidebar,#F0F2F4);font-family:Geist,'Segoe UI',system-ui,sans-serif}.ds-nav-a{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;text-decoration:none;color:var(--foreground,#16191D);font-size:14px;line-height:1.6}.ds-nav-a:hover{background:var(--card,#FFFFFF)}.ds-nav-a:focus-visible{outline:2px solid var(--primary,#0F6E66);outline-offset:2px}.ds-nav-a[aria-current=page]{background:var(--card,#FFFFFF);font-weight:600;box-shadow:0 1px 2px rgba(22,25,29,.06)}.ds-side-h{font-size:12px;font-weight:600;color:var(--muted-foreground,#5A626B);padding:14px 10px 4px}.ds-cited{margin-left:auto;width:7px;height:7px;border-radius:50%;background:var(--success,#1D9A60)}"
+    },
+    {
+      "name": "Suggestion Pills",
+      "kind": "chip",
+      "refersTo": "suggestion-pill",
+      "description": "Try and Break it prompts above the composer; failure probes are dashed.",
+      "html": "<div class=\"ds-sug\"><span class=\"ds-k\">Try</span><button class=\"ds-pill\">Sunday hours</button><button class=\"ds-pill\">Dogs</button><span class=\"ds-sep\"></span><span class=\"ds-k\">Break it</span><button class=\"ds-pill ds-break\">Not on file</button></div>",
+      "css": ".ds-sug{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-family:Geist,'Segoe UI',system-ui,sans-serif}.ds-k{font-size:12px;color:var(--muted-foreground,#5A626B)}.ds-sep{width:1px;height:18px;background:var(--border,#E2E5E8);margin:0 6px}.ds-pill{border:1px solid var(--border,#E2E5E8);background:var(--card,#FFFFFF);color:var(--foreground,#16191D);border-radius:999px;padding:4px 11px;font:400 13px/1.6 Geist,'Segoe UI',system-ui,sans-serif;cursor:pointer}.ds-pill:hover{border-color:var(--faint,#9AA1A9)}.ds-pill:focus-visible{outline:2px solid var(--primary,#0F6E66);outline-offset:2px}.ds-break{border-style:dashed}"
+    },
+    {
+      "name": "Citation Ref and Source Chip",
+      "kind": "chip",
+      "refersTo": "source-chip",
+      "description": "Inline numbered citation in the answer and the chip that opens the cited page.",
+      "html": "<p class=\"ds-ans\">Cancel at least 48 hours before your reservation and the deposit is <span style=\"white-space:nowrap\">refunded<button class=\"ds-ref\">1</button>.</span></p><button class=\"ds-chip ds-on\"><span class=\"ds-n\">1</span><svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-linejoin=\"round\"><path d=\"M4 1.8h5.3L12.2 4.7V14.2H4z M9.3 1.8v2.9h2.9\"/></svg>Booking policy · p.2</button>",
+      "css": ".ds-ans{margin:0 0 12px;font:400 15.5px/1.65 Geist,'Segoe UI',system-ui,sans-serif;color:var(--foreground,#16191D)}.ds-ref{border:0;background:var(--primary-soft,#E2F0EE);color:var(--primary,#0F6E66);font:600 11px/1 Geist,'Segoe UI',system-ui,sans-serif;padding:2px 5px;border-radius:5px;vertical-align:2px;margin-left:2px;cursor:pointer}.ds-ref:hover{background:var(--primary,#0F6E66);color:var(--primary-foreground,#FFFFFF)}.ds-chip{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border,#E2E5E8);background:var(--card,#FFFFFF);color:var(--foreground,#16191D);border-radius:8px;padding:6px 10px;font:400 13px/1.6 Geist,'Segoe UI',system-ui,sans-serif;cursor:pointer}.ds-chip:hover,.ds-on{border-color:var(--primary,#0F6E66)}.ds-chip:focus-visible,.ds-ref:focus-visible{outline:2px solid var(--primary,#0F6E66);outline-offset:2px}.ds-n{font-weight:600;color:var(--primary,#0F6E66)}"
+    },
+    {
+      "name": "Step Timeline",
+      "kind": "custom",
+      "refersTo": "step-timeline",
+      "description": "The per-answer audit trail; its dots are the system's only colour language.",
+      "html": "<div class=\"ds-steps\"><button class=\"ds-sum\"><span class=\"ds-mini\"><i class=\"d\"></i><i class=\"w\"></i><i class=\"d\"></i><i class=\"s\"></i></span><span class=\"ds-t\"><b>Working</b> · step 3 of 4</span></button><ol class=\"ds-list\"><li class=\"ds-st w\"><span class=\"ds-dot\"></span><div><div class=\"ds-stt\">Allergy topic detected</div><div class=\"ds-std\">Staff must confirm anything about allergies.</div></div></li><li class=\"ds-st d\"><span class=\"ds-dot\"></span><div><div class=\"ds-stt\">Searched the allergen documents</div><div class=\"ds-std\">Found 2 relevant passages.</div><div class=\"ds-hit\"><span>Allergen guide · p.1 · Nuts and cross-contact</span><span class=\"ds-mono\">0.71</span></div></div></li><li class=\"ds-st r\"><span class=\"ds-dot\"></span><div><div class=\"ds-stt\">Wrote the answer from those passages…</div></div></li><li class=\"ds-st x\"><span class=\"ds-dot\"></span><div><div class=\"ds-stt\">No passage answers this</div><div class=\"ds-std\">The match is too weak, so Passline won't guess.</div></div></li><li class=\"ds-st s\"><span class=\"ds-dot\"></span><div><div class=\"ds-stt\">Answer not drafted</div><div class=\"ds-std\">The AI model was not called.</div></div></li></ol></div>",
+      "css": ".ds-steps{max-width:520px;border:1px solid var(--border,#E2E5E8);border-radius:12px;background:var(--card,#FFFFFF);font-family:Geist,'Segoe UI',system-ui,sans-serif;color:var(--foreground,#16191D);line-height:1.6}.ds-sum{display:flex;align-items:center;gap:10px;width:100%;border:0;background:none;padding:9px 12px;text-align:left;font:400 13.5px/1.6 Geist,'Segoe UI',system-ui,sans-serif;color:var(--muted-foreground,#5A626B);border-radius:12px;cursor:pointer}.ds-sum:hover{color:var(--foreground,#16191D)}.ds-sum:focus-visible{outline:2px solid var(--primary,#0F6E66);outline-offset:2px}.ds-t b{color:var(--foreground,#16191D);font-weight:600}.ds-mini{display:inline-flex;gap:3px}.ds-mini i{width:6px;height:6px;border-radius:50%;background:var(--faint,#9AA1A9)}.ds-mini i.d{background:var(--success,#1D9A60)}.ds-mini i.w{background:var(--warning,#8F5208)}.ds-mini i.s{background:transparent;box-shadow:inset 0 0 0 1px var(--faint,#9AA1A9)}.ds-list{list-style:none;margin:0;padding:2px 14px 14px;position:relative;display:grid;gap:14px}.ds-list::before{content:'';position:absolute;left:19px;top:8px;bottom:22px;width:1px;background:var(--border,#E2E5E8)}.ds-st{position:relative;display:grid;grid-template-columns:12px minmax(0,1fr);gap:12px}.ds-dot{position:relative;z-index:1;margin-top:6px;width:11px;height:11px;border-radius:50%;background:var(--faint,#9AA1A9);box-shadow:0 0 0 3px var(--card,#FFFFFF)}.d .ds-dot{background:var(--success,#1D9A60)}.w .ds-dot{background:var(--warning,#8F5208)}.s .ds-dot{background:var(--card,#FFFFFF);box-shadow:0 0 0 3px var(--card,#FFFFFF),inset 0 0 0 1.5px var(--faint,#9AA1A9)}.r .ds-dot{background:var(--card,#FFFFFF);box-shadow:0 0 0 3px var(--card,#FFFFFF),inset 0 0 0 1.5px var(--primary,#0F6E66);animation:dsring 1s infinite cubic-bezier(0.16,1,0.3,1)}@keyframes dsring{50%{box-shadow:0 0 0 3px var(--card,#FFFFFF),inset 0 0 0 4px var(--primary,#0F6E66)}}.ds-stt{font-size:14px;font-weight:500}.s .ds-stt,.x .ds-stt{color:var(--muted-foreground,#5A626B)}.ds-std{font-size:13px;color:var(--muted-foreground,#5A626B)}.ds-hit{margin-top:8px;display:grid;grid-template-columns:minmax(0,1fr) 40px;gap:10px;font-size:13px;font-weight:500}.ds-mono{font:400 12px 'Geist Mono',ui-monospace,Consolas,monospace;font-variant-numeric:tabular-nums;text-align:right;color:var(--muted-foreground,#5A626B)}@media (prefers-reduced-motion:reduce){.r .ds-dot{animation:none}}"
+    },
+    {
+      "name": "Source Page",
+      "kind": "card",
+      "refersTo": "source-page",
+      "description": "The cited page inside the source panel, with the used sentence in Marker Yellow.",
+      "html": "<div class=\"ds-page\"><span class=\"ds-ttl\">Thymewick — Booking policy</span><div><h4 class=\"ds-h4\">Deposits and cancellation</h4><p class=\"ds-p ds-hl\">Private dining and large group bookings require a deposit to confirm the reservation. <mark class=\"ds-mark\">Deposits are refundable when cancelled at least 48 hours before the reservation.</mark></p></div><span class=\"ds-pno\">Page 2</span></div>",
+      "css": ".ds-page{max-width:380px;border:1px solid var(--border,#E2E5E8);border-radius:10px;padding:20px;display:grid;gap:14px;background:var(--background,#F7F8F9);font-family:Geist,'Segoe UI',system-ui,sans-serif}.ds-ttl{font-weight:600;font-size:15px;color:var(--foreground,#16191D)}.ds-h4{margin:0 0 2px;font-size:13.5px;font-weight:600;color:var(--foreground,#16191D)}.ds-p{margin:0;font-size:14px;line-height:1.6;color:var(--muted-foreground,#5A626B)}.ds-hl{color:var(--foreground,#16191D)}.ds-mark{background:var(--highlight,#FFE8A3);color:var(--highlight-foreground,#2A2000);border-radius:3px;padding:1px 2px;-webkit-box-decoration-break:clone;box-decoration-break:clone}.ds-pno{justify-self:end;font-size:12px;color:var(--muted-foreground,#5A626B)}"
+    },
+    {
+      "name": "Staff Notice",
+      "kind": "card",
+      "refersTo": "staff-notice",
+      "description": "The amber-washed alert on safety answers, carrying the Ask staff action.",
+      "html": "<div class=\"ds-notice\"><span class=\"ds-nh\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"><path d=\"M8 2l6.5 11.5h-13z\"/><path d=\"M8 6.5v3M8 11.6v.1\" stroke-linecap=\"round\"/></svg>Staff confirmation required</span><p class=\"ds-np\">Passline shares what the documents say, but only a team member can confirm what is safe for you.</p></div>",
+      "css": ".ds-notice{max-width:520px;display:grid;gap:10px;border-radius:12px;padding:12px 14px;background:var(--warning-soft,#FBF0E0);font-family:Geist,'Segoe UI',system-ui,sans-serif}.ds-nh{display:flex;gap:8px;align-items:center;font-size:13.5px;font-weight:600;color:var(--warning,#8F5208)}.ds-np{margin:0;font-size:13.5px;line-height:1.6;color:var(--foreground,#16191D)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Glass Pass",
+    "overview": "Passline is a working AI assistant, not a brochure about one. The kitchen pass is where finished work is handed over in full view; this system does the same with an answer. The visitor sees the question go in, watches each step of the work run on a vertical timeline, reads the answer as it streams, and can open the exact page it came from beside the chat. Everything else stays quiet so that trail is the loudest thing on screen.\n\nThe world is a neutral, near-white workspace (mirrored in a near-black dark theme) with one teal accent for anything you can act on, and a small set of status dots that carry all the meaning colour is allowed to carry. Density is comfortable-compact: 15px body, 13 to 14px secondary text, hairline borders instead of boxes on boxes, and generous gaps between turns of the conversation. It reads as a familiar assistant layout (sidebar, conversation, composer at the bottom, source panel to the right) but under its own brand: the Passline name and its pass-line mark, never Claude or Anthropic marks, colours or wording.\n\nIt rejects dashboard chrome (metric tiles, charts, KPI headers) and decorative theming. Depth comes from tone and borders; motion is limited to state: a running ring, a blinking caret, a chevron turning, drawers sliding.",
+    "keyCharacteristics": [
+      "Three-column assistant shell: 252px sidebar, centred conversation at a 760px measure, 420px source panel that opens beside it.",
+      "A per-answer step timeline whose dots are the only colour language.",
+      "One teal accent for actions, citations and live state.",
+      "Geist for everything; Geist Mono only for match scores and code paths.",
+      "Light and dark themes defined token for token.",
+      "Streaming answer with a teal caret, and a Stop control in the send button's place."
+    ],
+    "rules": [
+      {
+        "name": "The Dot Language Rule",
+        "body": "Green, amber and grey mean step state and nothing else: green passed, amber staff needed, grey stopped, hollow grey ring skipped or not yet released, teal ring running. Any list that reuses the dot must keep those meanings.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Teal Rule",
+        "body": "Teal marks what you can act on or what is live: buttons, citations, focus, caret, running ring. No second accent, and no teal on decoration.",
+        "section": "colors"
+      },
+      {
+        "name": "The Highlighter Rule",
+        "body": "Marker Yellow appears only on the passage an answer used. One highlight per page view.",
+        "section": "colors"
+      },
+      {
+        "name": "The Mono-for-Measurements Rule",
+        "body": "Geist Mono appears only on match scores and code paths. Labels, captions and numbers in prose stay in Geist.",
+        "section": "typography"
+      },
+      {
+        "name": "The Sentence Case Rule",
+        "body": "Every label, heading and group header is sentence case. There are no uppercase eyebrows or kickers above headings.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Lift Rule",
+        "body": "Only the composer floats at rest. Everything else is a bordered or tonal plane; hover may borrow the composer lift for starter cards and nothing else.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep the layout sidebar | conversation with the composer at the bottom | source panel beside the chat, and collapse to drawer plus full-screen sheet under 980px.",
+      "Do show a step timeline on every assistant answer, using only the five dot states: green passed, amber staff needed, grey stopped, hollow skipped, teal ring running.",
+      "Do attach a numbered citation ref and a source chip to every sourced answer, and open the cited page with its passage in Marker Yellow.",
+      "Do define every colour as a CSS variable with a light value and a dark value, and switch themes by variable, never by per-component overrides.",
+      "Do hold the conversation and composer to the 760px measure.",
+      "Do use 1px Hairline borders and tonal steps for structure, and keep the composer lift as the only resting shadow.",
+      "Do honour `prefers-reduced-motion` by removing the running pulse, the caret blink and all transitions."
+    ],
+    "donts": [
+      "Don't use green, amber or grey for decoration, charts, tags or emphasis; they are step states.",
+      "Don't add a second accent colour or use teal on non-interactive decoration.",
+      "Don't use Claude or Anthropic branding, marks, colours or wording anywhere in the Passline interface.",
+      "Don't add dashboard chrome (metric tiles, KPI headers, charts) or decorative themes to the assistant surfaces.",
+      "Don't set labels, body or numbers-in-prose in Geist Mono; mono is for scores and code paths.",
+      "Don't put uppercase eyebrows or kickers above headings.",
+      "Don't use any gradient other than the composer's fade into Desk Ground.",
+      "Don't use hard offset shadows or heavy drop shadows on cards."
+    ]
+  }
+}

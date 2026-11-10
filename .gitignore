@@ -1,0 +1,30 @@
+# dependencies
+node_modules/
+
+# builds
+.next/
+dist/
+out/
+coverage/
+*.tsbuildinfo
+
+# env and secrets (keep the template)
+.env*
+!.env.example
+
+# logs
+*.log
+npm-debug.log*
+
+# platform
+.vercel/
+.DS_Store
+Thumbs.db
+
+# local-only design material (early sketches contain real business names)
+docs/mockups/
+
+# local design-tool scratch
+.impeccable/direction-payload.json
+.impeccable/live/
+.impeccable/questions/
