@@ -149,8 +149,8 @@ describe("check_availability", () => {
 });
 
 describe("tools/list", () => {
-  it("shows the four tools: two core + two restaurant-kit", async () => {
+  it("shows the five tools: three core + two restaurant-kit", async () => {
     const { tools } = await client.listTools();
-    expect(tools.map((t) => t.name).sort()).toEqual(["check_allergens", "check_availability", "get_opening_hours", "search_menu"]);
+    expect(tools.map((t) => t.name).sort()).toEqual(["check_allergens", "check_availability", "get_floor_plan", "get_opening_hours", "search_menu"]);
   });
 });

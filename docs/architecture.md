@@ -41,7 +41,7 @@ Dashed lines are planned and not built yet.
 | Module | Status | README |
 |---|---|---|
 | `data/` (tenant data + loader) | Phase 0, done | [`data/README.md`](../data/README.md) |
-| `packages/mcp-server` | Phase 0, in progress: 4 of 5 tools (hours, availability, menu, allergens) | [`packages/mcp-server/README.md`](../packages/mcp-server/README.md) |
+| `packages/mcp-server` | Phase 0: all 5 tools built (hours, availability, menu, allergens, floor-plan image); client configs + npm next | [`packages/mcp-server/README.md`](../packages/mcp-server/README.md) |
 
 ## Decisions
 
