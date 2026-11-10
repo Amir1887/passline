@@ -1,38 +1,160 @@
 {
   "slot_minutes": 30,
   "seating_minutes": 90,
+  "booking_window_days": 60,
   "tables": [
-    { "id": "T1", "seats": 2, "area": "dining" },
-    { "id": "T2", "seats": 2, "area": "dining" },
-    { "id": "T3", "seats": 4, "area": "dining" },
-    { "id": "T4", "seats": 4, "area": "dining" },
-    { "id": "T5", "seats": 4, "area": "dining" },
-    { "id": "T6", "seats": 2, "area": "dining" },
-    { "id": "T7", "seats": 6, "area": "dining" },
-    { "id": "T8", "seats": 2, "area": "dining" },
-    { "id": "T9", "seats": 4, "area": "dining" },
-    { "id": "T10", "seats": 4, "area": "dining" },
-    { "id": "T11", "seats": 2, "area": "dining" },
-    { "id": "T12", "seats": 4, "area": "terrace" },
-    { "id": "T13", "seats": 2, "area": "terrace" },
-    { "id": "PR", "seats": 12, "area": "private", "staff_only": true }
+    {
+      "id": "T1",
+      "seats": 2,
+      "area": "dining"
+    },
+    {
+      "id": "T2",
+      "seats": 2,
+      "area": "dining"
+    },
+    {
+      "id": "T3",
+      "seats": 4,
+      "area": "dining"
+    },
+    {
+      "id": "T4",
+      "seats": 4,
+      "area": "dining"
+    },
+    {
+      "id": "T5",
+      "seats": 4,
+      "area": "dining"
+    },
+    {
+      "id": "T6",
+      "seats": 2,
+      "area": "dining"
+    },
+    {
+      "id": "T7",
+      "seats": 6,
+      "area": "dining"
+    },
+    {
+      "id": "T8",
+      "seats": 2,
+      "area": "dining"
+    },
+    {
+      "id": "T9",
+      "seats": 4,
+      "area": "dining"
+    },
+    {
+      "id": "T10",
+      "seats": 4,
+      "area": "dining"
+    },
+    {
+      "id": "T11",
+      "seats": 2,
+      "area": "dining"
+    },
+    {
+      "id": "T12",
+      "seats": 4,
+      "area": "terrace"
+    },
+    {
+      "id": "T13",
+      "seats": 2,
+      "area": "terrace"
+    },
+    {
+      "id": "PR",
+      "seats": 12,
+      "area": "private",
+      "staff_only": true
+    }
   ],
   "recurring_bookings": [
-    { "weekday": "friday", "time": "19:30", "table": "T3" },
-    { "weekday": "friday", "time": "19:30", "table": "T4" },
-    { "weekday": "friday", "time": "19:30", "table": "T5" },
-    { "weekday": "friday", "time": "19:30", "table": "T9" },
-    { "weekday": "friday", "time": "19:30", "table": "T10" },
-    { "weekday": "friday", "time": "19:30", "table": "T12" },
-    { "weekday": "friday", "time": "19:30", "table": "T7" },
-    { "weekday": "saturday", "time": "19:30", "table": "T3" },
-    { "weekday": "saturday", "time": "19:30", "table": "T4" },
-    { "weekday": "saturday", "time": "19:30", "table": "T5" },
-    { "weekday": "saturday", "time": "19:30", "table": "T9" },
-    { "weekday": "saturday", "time": "19:30", "table": "T10" },
-    { "weekday": "saturday", "time": "19:30", "table": "T12" },
-    { "weekday": "saturday", "time": "19:30", "table": "T7" },
-    { "weekday": "saturday", "time": "20:00", "table": "T1" },
-    { "weekday": "sunday", "time": "12:30", "table": "T7" }
+    {
+      "weekday": "friday",
+      "time": "19:30",
+      "table": "T3"
+    },
+    {
+      "weekday": "friday",
+      "time": "19:30",
+      "table": "T4"
+    },
+    {
+      "weekday": "friday",
+      "time": "19:30",
+      "table": "T5"
+    },
+    {
+      "weekday": "friday",
+      "time": "19:30",
+      "table": "T9"
+    },
+    {
+      "weekday": "friday",
+      "time": "19:30",
+      "table": "T10"
+    },
+    {
+      "weekday": "friday",
+      "time": "19:30",
+      "table": "T12"
+    },
+    {
+      "weekday": "friday",
+      "time": "19:30",
+      "table": "T7"
+    },
+    {
+      "weekday": "saturday",
+      "time": "19:30",
+      "table": "T3"
+    },
+    {
+      "weekday": "saturday",
+      "time": "19:30",
+      "table": "T4"
+    },
+    {
+      "weekday": "saturday",
+      "time": "19:30",
+      "table": "T5"
+    },
+    {
+      "weekday": "saturday",
+      "time": "19:30",
+      "table": "T9"
+    },
+    {
+      "weekday": "saturday",
+      "time": "19:30",
+      "table": "T10"
+    },
+    {
+      "weekday": "saturday",
+      "time": "19:30",
+      "table": "T12"
+    },
+    {
+      "weekday": "saturday",
+      "time": "19:30",
+      "table": "T7"
+    },
+    {
+      "weekday": "saturday",
+      "time": "20:00",
+      "table": "T1"
+    },
+    {
+      "weekday": "sunday",
+      "time": "12:30",
+      "table": "T7"
+    }
   ]
 }
