@@ -1,18 +1,56 @@
 {
   "name": "passline-mcp",
   "version": "0.1.0",
-  "description": "Passline MCP server: read-only tools for a fictional restaurant (Thymewick). Portfolio demo.",
+  "description": "MCP server for a fictional restaurant (Thymewick): opening hours, table availability, menu search, allergen checks and a floor-plan image. Read-only, stdio. Portfolio demo with fictional data.",
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "model-context-protocol",
+    "claude",
+    "ai-agent",
+    "restaurant",
+    "tools",
+    "typescript"
+  ],
+  "homepage": "https://github.com/Amir1887/passline/tree/main/packages/mcp-server#readme",
+  "bugs": {
+    "url": "https://github.com/Amir1887/passline/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Amir1887/passline.git",
+    "directory": "packages/mcp-server"
+  },
   "license": "MIT",
   "author": "Amir Gad",
   "type": "module",
   "engines": {
     "node": ">=20"
   },
+  "bin": {
+    "passline-mcp": "dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/server.d.ts",
+      "import": "./dist/server.js"
+    }
+  },
+  "files": [
+    "dist",
+    "!dist/**/*.map",
+    "data",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
-    "build": "tsc -p tsconfig.build.json",
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
+    "build": "npm run clean && tsc -p tsconfig.build.json",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "pretest": "npm run build",
     "test": "vitest run",
+    "prepack": "npm run build && node scripts/pack-assets.mjs copy",
+    "postpack": "node scripts/pack-assets.mjs clean",
     "render:floor-plan": "node scripts/render-floor-plan.mjs"
   },
   "dependencies": {
@@ -26,12 +64,7 @@
     "typescript": "6.0.3",
     "vitest": "5.0.5"
   },
-  "bin": {
-    "passline-mcp": "dist/cli.js"
-  },
-  "main": "dist/server.js",
-  "files": [
-    "dist",
-    "data"
-  ]
+  "publishConfig": {
+    "access": "public"
+  }
 }

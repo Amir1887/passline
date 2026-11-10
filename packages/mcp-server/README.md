@@ -74,33 +74,47 @@ Every result also carries `sandbox` (the fictional-data notice). All tools are a
 - Times must fall on 30-minute slots.
 - Groups over 12 get a fixable error pointing them to staff.
 
-## Run it locally
+## Install
 
-```bash
-npm install
-npm run build -w passline-mcp
-```
-
-**MCP Inspector**: try every tool in the browser:
-```bash
-npx @modelcontextprotocol/inspector node packages/mcp-server/dist/cli.js
-```
+Requires **Node.js 20+**. Nothing else: no API keys, no account, no network calls.
 
 **Claude Code**:
 ```bash
-claude mcp add passline -- node /absolute/path/to/passline/packages/mcp-server/dist/cli.js
+claude mcp add passline -- npx -y passline-mcp
 ```
 
-**Claude Desktop** (`claude_desktop_config.json`) and **Cursor** (`.cursor/mcp.json`):
+**Claude Desktop**: Settings → Developer → Edit Config, add the server, then fully quit and reopen Claude Desktop:
 ```json
 {
   "mcpServers": {
-    "passline": { "command": "node", "args": ["/absolute/path/to/passline/packages/mcp-server/dist/cli.js"] }
+    "passline": { "command": "npx", "args": ["-y", "passline-mcp"] }
   }
 }
 ```
 
-Once the package is published, `npx -y passline-mcp` will replace the local path.
+**Cursor**: `.cursor/mcp.json` in your project, or Settings → MCP:
+```json
+{
+  "mcpServers": {
+    "passline": { "command": "npx", "args": ["-y", "passline-mcp"] }
+  }
+}
+```
+
+**MCP Inspector**: try every tool in the browser:
+```bash
+npx @modelcontextprotocol/inspector npx -y passline-mcp
+```
+
+Then ask: *"Are you open Friday, and is the risotto nut-free?"* or *"Show me the floor plan."*
+
+### From this repository
+
+```bash
+npm install
+npm run build -w passline-mcp
+claude mcp add passline -- node /absolute/path/to/passline/packages/mcp-server/dist/cli.js
+```
 
 Set `PASSLINE_DATA_DIR` to point at another folder with the same data files.
 
