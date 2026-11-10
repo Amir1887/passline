@@ -191,20 +191,25 @@ correct handoffs, average cost and latency. Save each run to
 - Plan before code: for each phase, write the plan, wait for Amir's approval,
   then implement.
 
-## 7. Repo layout (suggested)
+## 7. Repo layout
+
+A monorepo with npm workspaces. See `docs/architecture.md` and ADR 0001.
 
 ```
 passline/
-├─ app/                  Next.js routes (UI + /api)
-├─ components/           UI components
-├─ lib/
-│  ├─ ai/                Claude client, prompts, cost logging
-│  ├─ rag/               ingest, chunk, embed, retrieve, rerank, answer
-│  ├─ safety/            rule checks, handoff
-│  └─ db/                Supabase client, queries
-├─ supabase/migrations/  SQL migrations (RLS included)
-├─ data/thymewick/ fictional source documents (Markdown → PDF)
+├─ apps/
+│  └─ web/               Next.js: UI pages (FE) + API routes (BE)       ← Phase 1
+│     ├─ app/            routes
+│     ├─ features/       one folder per feature
+│     └─ lib/            app-only helpers (ai/, rag/, guard/, safety/)
+├─ packages/
+│  ├─ mcp-server/        MCP server (npm: passline-mcp)                  ← Phase 0
+│  ├─ core/              shared domain logic, extracted when 2+ apps need it
+│  └─ db/                Supabase client, generated types, data access   ← Phase 1
+├─ supabase/             migrations/ (RLS included), seed, config: one project, at root
+├─ data/thymewick/       fictional source data (feeds MCP tools and RAG documents)
 ├─ evals/                questions + runner + results
-├─ docs/                 PROJECT-BRIEF.md, architecture, mockups/
-└─ tests/
+└─ docs/                 PROJECT-BRIEF.md, architecture.md, adr/ (mockups/ stays local)
 ```
+
+Code moves into `packages/` only when a second app uses it.

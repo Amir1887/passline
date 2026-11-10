@@ -1,0 +1,26 @@
+{
+  "name": "passline-mcp",
+  "version": "0.0.0",
+  "description": "Passline MCP server: read-only tools for a fictional restaurant (Thymewick). Portfolio demo.",
+  "license": "MIT",
+  "author": "Amir Gad",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "2.4.0",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/client": "2.4.0",
+    "@types/node": "22.20.5",
+    "typescript": "6.0.3",
+    "vitest": "5.0.5"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "passline",
+  "private": true,
+  "description": "AI front desk for restaurants (portfolio demo). Fictional data only.",
+  "license": "MIT",
+  "author": "Amir Gad",
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present"
+  }
+}
