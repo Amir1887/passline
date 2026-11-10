@@ -1,0 +1,9 @@
+{
+  "id": "thymewick",
+  "name": "Thymewick",
+  "vertical": "restaurant",
+  "timezone": "America/New_York",
+  "currency": "USD",
+  "max_party_size": 12,
+  "sandbox_notice": "Fictional demo data (Thymewick). Not a real restaurant."
+}

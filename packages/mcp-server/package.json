@@ -11,7 +11,8 @@
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "test": "vitest run"
+    "test": "vitest run",
+    "render:floor-plan": "node scripts/render-floor-plan.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/server": "2.4.0",
@@ -19,6 +20,7 @@
   },
   "devDependencies": {
     "@modelcontextprotocol/client": "2.4.0",
+    "@resvg/resvg-js": "2.6.2",
     "@types/node": "22.20.5",
     "typescript": "6.0.3",
     "vitest": "5.0.5"

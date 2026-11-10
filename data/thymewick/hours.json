@@ -1,0 +1,17 @@
+{
+  "weekly": {
+    "monday": null,
+    "tuesday": { "open": "17:00", "close": "22:00", "last_seating": "21:15" },
+    "wednesday": { "open": "17:00", "close": "22:00", "last_seating": "21:15" },
+    "thursday": { "open": "17:00", "close": "22:00", "last_seating": "21:15" },
+    "friday": { "open": "17:00", "close": "23:00", "last_seating": "22:00" },
+    "saturday": { "open": "17:00", "close": "23:00", "last_seating": "22:00" },
+    "sunday": { "open": "12:00", "close": "21:00", "last_seating": "20:15", "note": "Brunch until 15:00" }
+  },
+  "closures": [
+    { "date": "2026-12-24", "reason": "Christmas Eve" },
+    { "date": "2026-12-25", "reason": "Christmas Day" },
+    { "date": "2026-12-26", "reason": "Boxing Day" },
+    { "date": "2027-01-01", "reason": "New Year's Day" }
+  ]
+}
