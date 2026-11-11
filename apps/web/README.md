@@ -36,6 +36,8 @@ npm run build -w passline-web && npm run start -w passline-web
 
 ## Stack
 
+Live at https://passline-delta.vercel.app (Vercel, Root Directory `apps/web`).
+
 Next.js 16 (App Router, static), React 19, Tailwind CSS v4 with the `DESIGN.md` tokens as CSS variables (`app/globals.css`, light and dark), Geist fonts. All versions are pinned.
 
 No shadcn components yet: the page needs one button, and a component library for that would be an abstraction used once. shadcn comes in with the Phase 1 app (Sheet, Popover, Tabs…).
