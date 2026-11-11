@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+/* Tokens from DESIGN.md (AI-assistant world): one teal accent, neutral grounds,
+   status colours only as step dots. Light first; dark mirrors every token. */
+:root {
+  --background: #f7f8f9;
+  --card: #ffffff;
+  --sidebar: #f0f2f4;
+  --foreground: #16191d;
+  --muted-foreground: #5a626b;
+  --faint: #9aa1a9;
+  --border: #e2e5e8;
+  --primary: #0f6e66;
+  --primary-foreground: #ffffff;
+  --primary-soft: #e2f0ee;
+  --success: #1d9a60;
+  --warning: #8f5208;
+  --warning-dot: #d48a22;
+  --warning-soft: #fbf0e0;
+  --code: #f3f5f6;
+  --lift: 0 1px 2px rgba(22, 25, 29, 0.06), 0 8px 24px -12px rgba(22, 25, 29, 0.18);
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #111315;
+    --card: #181b1e;
+    --sidebar: #15181b;
+    --foreground: #e7eaed;
+    --muted-foreground: #a2aab2;
+    --faint: #6f7780;
+    --border: #2a2f34;
+    --primary: #4fc1b4;
+    --primary-foreground: #06201d;
+    --primary-soft: #163330;
+    --success: #3cc384;
+    --warning: #e5a54b;
+    --warning-dot: #e5a54b;
+    --warning-soft: #33261a;
+    --code: #14171a;
+    --lift: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px -12px rgba(0, 0, 0, 0.6);
+    color-scheme: dark;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-card: var(--card);
+  --color-sidebar: var(--sidebar);
+  --color-foreground: var(--foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-faint: var(--faint);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-soft: var(--primary-soft);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-warning-dot: var(--warning-dot);
+  --color-warning-soft: var(--warning-soft);
+  --color-code: var(--code);
+  --shadow-lift: var(--lift);
+  --font-sans: var(--font-geist-sans), "Segoe UI", system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, Consolas, monospace;
+}
+
+html { scrollbar-color: var(--faint) transparent; }
+body { background: var(--background); color: var(--foreground); }
+::selection { background: var(--primary-soft); color: var(--foreground); }
+:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 6px; }
+h1, h2, h3 { text-wrap: balance; letter-spacing: -0.015em; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}

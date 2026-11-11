@@ -71,4 +71,4 @@ Use bullets only when listing parts (screens, tools). End with the Claude `Co-Au
 
 ## Rule: merging PRs
 
-Merge only after the CI checks have **actually run and passed**. "No checks reported" or "queued" means wait, not merge. Squash-merge, delete the branch, sync `main`, then switch `gh` back to `amir-hwood`.
+Merge only after the CI checks have **actually run and passed**. "No checks reported" or "queued" means wait, not merge. Squash-merge, delete the branch, sync `main`, then switch `gh` back to the other (non-Passline) account.

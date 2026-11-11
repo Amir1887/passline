@@ -1,0 +1,34 @@
+{
+  "name": "passline-web",
+  "private": true,
+  "description": "Passline public site: what it is, the MCP server, and the roadmap. Static.",
+  "license": "MIT",
+  "author": "Amir Gad",
+  "type": "module",
+  "scripts": {
+    "assets": "node scripts/copy-assets.mjs",
+    "predev": "npm run build -w passline-mcp && npm run assets",
+    "dev": "next dev",
+    "prebuild": "npm run build -w passline-mcp && npm run assets",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "npm run build -w passline-mcp && next typegen && tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "geist": "1.8.2",
+    "next": "16.4.3",
+    "passline-mcp": "0.1.0",
+    "react": "19.2.9",
+    "react-dom": "19.2.9"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "22.20.5",
+    "@types/react": "19.2.7",
+    "@types/react-dom": "19.2.3",
+    "tailwindcss": "4.3.3",
+    "typescript": "6.0.3",
+    "vitest": "5.0.5"
+  }
+}
