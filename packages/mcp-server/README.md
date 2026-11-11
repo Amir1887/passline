@@ -4,7 +4,7 @@ An MCP server for **Thymewick**, a fictional demo restaurant. It gives any MCP c
 
 > **All data is fictional.** Thymewick is not a real restaurant. Every tool result says so.
 >
-> **Status:** Phase 0. All 5 tools built and tested; published on npm as [`passline-mcp`](https://www.npmjs.com/package/passline-mcp). Verified with MCP Inspector and Claude Code.
+> **Status:** Phase 0. All 5 tools built and tested; published on npm as [`passline-mcp`](https://www.npmjs.com/package/passline-mcp). Verified with MCP Inspector and Claude Code. Public page: https://passline-delta.vercel.app
 >
 > ```bash
 > npx -y passline-mcp

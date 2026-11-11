@@ -1,6 +1,6 @@
 # Passline
 
-**AI front desk for restaurants (portfolio demo).**
+**AI front desk for restaurants (portfolio demo).** · Live: **https://passline-delta.vercel.app**
 
 Passline answers guest questions from a restaurant's own documents, shows the exact passage it used, refuses to guess, and hands allergy questions to staff. Each release adds one more working piece of the front desk, all of it real and testable.
 
