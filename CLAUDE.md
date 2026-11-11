@@ -50,3 +50,25 @@ Tailwind CSS v4 + shadcn/ui. Design tokens from `DESIGN.md` are defined as CSS v
 - No `console.log` in app code, no commented-out code, no empty catch blocks, meaningful names.
 - Run `npm run typecheck`, `npm test` and `npm run eval` before every PR.
 - Conventional commits. One branch + PR per feature, squash-merged to `main`.
+
+## Rule: commit messages
+
+**Subject:** `type(scope): what changes, as an outcome`. Lowercase, no full stop, and the squash merge adds `(#N)`.
+- Types: `feat`, `fix`, `refactor`, `test`, `docs`, `chore`, `ci`.
+- Scopes: `mcp`, `data`, `web`, `rag`, `db`, `ai`, `evals`, `ci`, `repo`, `docs`.
+- Prefer the new behaviour over "add X": `feat(mcp): check_allergens never says a dish is safe`.
+
+**Body:** short prose paragraphs wrapped at about 72 characters.
+1. **Why:** the problem, with a concrete example or numbers when there is one.
+2. **What changed:** the behaviour and the key decisions, not a file list.
+3. **Edge cases / limits** worth knowing.
+4. `Tested:` one line on how it was proven (cases, tools, clients).
+5. `Follow-up:` anything deliberately left for later.
+
+Use bullets only when listing parts (screens, tools). End with the Claude `Co-Authored-By` trailer only.
+
+**Never** put a work email, an employer name or any private project name in a commit. Commits are authored as `Amir Gad <Amir1887@users.noreply.github.com>`.
+
+## Rule: merging PRs
+
+Merge only after the CI checks have **actually run and passed**. "No checks reported" or "queued" means wait, not merge. Squash-merge, delete the branch, sync `main`, then switch `gh` back to `amir-hwood`.
