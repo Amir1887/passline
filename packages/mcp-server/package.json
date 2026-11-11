@@ -34,6 +34,10 @@
     ".": {
       "types": "./dist/server.d.ts",
       "import": "./dist/server.js"
+    },
+    "./tools": {
+      "types": "./dist/catalog.d.ts",
+      "import": "./dist/catalog.js"
     }
   },
   "files": [

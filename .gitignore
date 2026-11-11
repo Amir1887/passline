@@ -33,3 +33,8 @@ docs/mockups/
 packages/mcp-server/data/
 packages/mcp-server/LICENSE
 *.tgz
+
+# web app
+apps/web/.next/
+apps/web/next-env.d.ts
+apps/web/public/assets/

@@ -6,7 +6,8 @@
   "author": "Amir Gad",
   "type": "module",
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "apps/*"
   ],
   "engines": {
     "node": ">=20"
