@@ -17,6 +17,8 @@ claude mcp add passline -- npx -y passline-mcp
 
 Setup for Claude Desktop, Cursor and MCP Inspector, how the tool descriptions are written, and how the image is returned: [packages/mcp-server/README.md](packages/mcp-server/README.md).
 
+<img src="docs/images/claude-code-passline.png" alt="Claude Code using the Passline MCP tools: Friday hours, and the risotto may contain tree nuts with a staff note" width="640">
+
 ## What it proves
 
 | Skill | How Passline proves it |

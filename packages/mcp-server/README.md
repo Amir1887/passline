@@ -187,7 +187,9 @@ $0. No AI model, network call or database.
 
 Verified by hand:
 - **MCP Inspector 2.14.0** (CLI): `tools/list` and `tools/call` for all 5 tools, against the local build **and** against `npx -y passline-mcp` installed from npm into an empty folder
-- **Claude Code**: `claude mcp list` → ✔ Connected
+- **Claude Code**: `claude mcp list` → ✔ Connected. Asked *"Are you open Friday, and is the risotto nut-free?"*, it called the tools and answered without promising safety:
+
+![Claude Code answering with the Passline tools: Friday hours, risotto may contain tree nuts, staff note](../../docs/images/claude-code-passline.png)
 
 ## Releasing
 
